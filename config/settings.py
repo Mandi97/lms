@@ -26,7 +26,8 @@ SECRET_KEY = '#ax*ni635sqs1%ytq)wd6ml9k^b^-$%s5it+s_dhh044r_-o1i'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+INTERNAL_IPS = ALLOWED_HOSTS
 
 
 # Application definition
@@ -39,10 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'debug_toolbar',
+
     'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -124,3 +128,5 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
