@@ -9,3 +9,9 @@ db.sqlite3
 
 staticfiles/*
 media/*
+
+ example.py
+ examples_of_pt.txt
+ .coverage
+ htmlcov
+ .pytest_cache
